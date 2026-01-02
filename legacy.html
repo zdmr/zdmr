@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tugrulozdemir.com - Legacy</title>
+    <style>
+        html { height: -webkit-fill-available; }
+        body {
+            background-color: #1e1e1e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            height: 100dvh;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+            -webkit-font-smoothing: antialiased;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+        .objc-code {
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+        .keyword { color: #D3429E; }
+        .class-name { color: #6fb3d2; }
+        .pointer { color: #ffffff; }
+        .vim-command {
+            font-size: 1.2rem;
+            color: #7d8590;
+            padding-left: 25px;
+            opacity: 0.8;
+            position: relative;
+        }
+        .vim-command::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #007aff;
+            margin-left: 6px;
+            vertical-align: middle;
+            animation: blink 1.2s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #007aff; }
+        }
+        @media (max-width: 600px) {
+            .content-wrapper { padding: 0 30px; box-sizing: border-box; }
+            .objc-code { font-size: 1.1rem; }
+            .vim-command { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="objc-code">
+            <span class="class-name">NSObject</span> <span class="pointer">*</span>base = <span class="keyword">[[</span><span class="class-name">NSObject</span> <span class="keyword">alloc</span><span class="keyword">]</span> <span class="keyword">init</span><span class="keyword">]</span>;
+        </div>
+        <div class="vim-command">
+            :wq
+        </div>
+    </div>
+</body>
+</html>

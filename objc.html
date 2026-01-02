@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>tugrulozdemir.com @ Obj-C</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+            -webkit-font-smoothing: antialiased;
+            color: #ffffff;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px 25px;
+            box-sizing: border-box;
+        }
+        .since-tag { 
+            color: #7F8C98; 
+            font-size: 0.8rem; 
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .header-comment {
+            font-size: 0.85rem;
+            color: #6A737D;
+            line-height: 1.5;
+            border-left: 2px solid #30363d;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+        .objc-code {
+            font-size: 1.2rem;
+            color: #ffffff;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .keyword { color: #D3429E; }
+        .method { color: #3ad900; }
+        .vim-container {
+            margin-top: 30px;
+            width: 100%;
+        }
+        .status-line {
+            background-color: #313131;
+            color: #d0d0d0;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 10px;
+            margin-bottom: 6px;
+            user-select: none;
+        }
+        .status-left { font-weight: normal; }
+        .status-right { opacity: 0.8; }
+        .vim-command {
+            display: block;
+            font-size: 1.0rem;
+            color: #e6edf3;
+            padding-left: 2px;
+        }
+        .vim-command::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #e6edf3;
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1.5s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #e6edf3; }
+        }
+        @media (max-width: 600px) {
+            .objc-code { font-size: 1rem; }
+            .header-comment { font-size: 0.75rem; }
+            .since-tag { font-size: 0.65rem; }
+            .content-wrapper { padding: 20px; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="since-tag">Since Manual Reference Counting</div>
+        <div class="header-comment">
+            // Türk Telekom, THY, TTNET, Muud, Avea<br>
+            // Developed by Tugrul Ozdemir
+        </div>
+        <div class="objc-code"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const char</span> *argv[]) {
+    [foundation <span class="method">retain</span>];
+}</div>
+        <div class="vim-container">
+            <div class="status-line" role="status">
+                <span class="status-left">main.m [+]</span>
+                <span class="status-right">utf-8 | objc | 4,1</span>
+            </div>
+            <samp class="vim-command">:wq</samp>
+        </div>
+    </div>
+</body>
+</html>

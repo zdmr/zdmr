@@ -5,64 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tugrulozdemir.com</title>
     <style>
-        html { height: -webkit-fill-available; }
+        html { 
+            height: -webkit-fill-available; 
+            overflow-x: hidden; 
+        }
         body {
             background-color: #0d1117;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             min-height: -webkit-fill-available;
-            height: 100dvh;
             font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
             -webkit-font-smoothing: antialiased;
             color: #e6edf3;
-            position: relative;
         }
         .content-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            text-align: left;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            justify-content: center;
         }
-        .swift-code {
+        .swift-code-block {
+            margin: 0;
+            padding: 0;
             font-size: 1.6rem;
             letter-spacing: -0.5px;
             color: #e6edf3;
+            line-height: 1.4;
+            background: transparent;
+            white-space: pre-wrap; 
+            word-wrap: break-word;
         }
+        code { font-family: inherit; }
         .keyword { color: #ff7b72; }
         .dot-case {
             color: #d2a8ff;
             font-weight: bold;
             text-shadow: 0 0 8px rgba(210, 168, 255, 0.4);
         }
-        .vim-command {
-            font-size: 1.2rem;
-            color: #7d8590;
-            padding-left: 25px;
-            opacity: 0.8;
-            position: relative;
-        }
-        .vim-command::after {
-            content: '';
+        .cursor {
             display: inline-block;
-            width: 8px;
-            height: 18px;
-            background-color: #58a6ff;
-            margin-left: 6px;
+            width: 2px;
+            height: 1.4rem;
+            background-color: rgba(52, 124, 254, 0.7);
+            margin-left: 2px;
             vertical-align: middle;
             animation: blink 1.2s step-end infinite;
         }
+        .vim-container {
+            margin-top: 50px;
+            width: 100%;
+        }
+        .status-line {
+            background-color: #30363d;
+            color: #e6edf3;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 10px;
+            margin-bottom: 8px;
+            user-select: none; 
+        }
+        .status-left { font-weight: bold; color: #a6e22e; } 
+        .status-right { opacity: 0.7; }
+        .archive-nav {
+            padding: 30px 0;
+            width: 100%;
+            text-align: center;
+        }
         .archive-link {
-            position: absolute;
-            bottom: 30px;
             font-size: 0.75rem;
             color: #30363d;
             text-decoration: none;
             border-bottom: 1px dashed #30363d;
             transition: color 0.3s;
+            display: inline-block;
         }
         .archive-link:hover {
             color: #7d8590;
@@ -70,24 +95,30 @@
         }
         @keyframes blink {
             from, to { background-color: transparent; }
-            50% { background-color: #58a6ff; }
+            50% { background-color: rgba(52, 124, 254, 0.7); }
         }
         @media (max-width: 600px) {
-            .content-wrapper { padding: 0 30px; box-sizing: border-box; }
-            .swift-code { font-size: 1.2rem; }
-            .vim-command { font-size: 1rem; }
+            .swift-code-block { font-size: 1.25rem; }
+            .status-line { font-size: 0.75rem; }
+            .content-wrapper { padding: 40px 24px; }
+            .cursor { height: 1.15rem; }
         }
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <div class="swift-code">
-            <span class="keyword">if let</span> dot <span class="keyword">=</span> <span class="dot-case">.</span> {
+    <main class="content-wrapper">
+        <pre class="swift-code-block"><code><span class="keyword">if let</span> dot <span class="keyword">=</span> <span class="dot-case">.</span> {
+    <span class="cursor"></span>
+}</code></pre>
+        <div class="vim-container">
+            <div class="status-line" role="status">
+                <span class="status-left">-- INSERT --</span>
+                <span class="status-right">main.swift [+] 2,5</span>
+            </div>
         </div>
-        <div class="vim-command">
-            :wq
-        </div>
-    </div>
-    <a href="legacy.html" class="archive-link">ARCHIVE: legacy_v1.0.objc</a>
+    </main>
+    <nav class="archive-nav">
+        <a href="objc.html" class="archive-link">ARCHIVE: legacy_v1.0.objc</a>
+    </nav>
 </body>
 </html>

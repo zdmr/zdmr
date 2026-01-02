@@ -2,89 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>tugrulozdemir.com @ Obj-C</title>
     <style>
-        html { height: -webkit-fill-available; }
-        body {
-            background-color: #0d1117;
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #0d1117;
+        }
+        body {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            min-height: -webkit-fill-available;
-            height: 100dvh;
             font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
             -webkit-font-smoothing: antialiased;
             color: #ffffff;
-            overflow: hidden;
         }
         .content-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 25px;
             text-align: left;
             width: fit-content;
             max-width: 90vw;
+            padding: 20px;
         }
-        .comment {
+        .since-tag { 
+            color: #7F8C98; 
+            font-size: 0.85rem; 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .header-comment {
             font-size: 0.9rem;
-            color: #7F8C98;
-            opacity: 0.8;
-            margin-bottom: -4px;
+            color: #6A737D;
+            line-height: 1.6;
+            border-left: 2px solid #30363d;
+            padding-left: 15px;
         }
         .objc-code {
-            font-size: 1.6rem;
-            letter-spacing: -0.5px;
+            font-size: 1.2rem;
             color: #ffffff;
-            white-space: nowrap;
+            line-height: 1.5;
+            /* Mobilde taşmayı yöneten kural */
+            white-space: pre-wrap;
+            word-break: break-all;
         }
         .keyword { color: #D3429E; }
-        .vim-command {
-            font-size: 1.2rem;
-            color: #7d8590;
-            padding-left: 25px;
-            opacity: 0.8;
-            position: relative;
-        }
-        .vim-command::after {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 18px;
-            background-color: #007aff;
-            margin-left: 6px;
-            vertical-align: middle;
-            animation: blink 1.2s step-end infinite;
-        }
-        @keyframes blink {
-            from, to { background-color: transparent; }
-            50% { background-color: #007aff; }
-        }
+        .method { color: #3ad900; }
+
         @media (max-width: 600px) {
-            .content-wrapper { padding: 0 20px; box-sizing: border-box; }
-            .comment { font-size: 3.5vw; }
-            .objc-code {
-                font-size: 5.2vw;
-                letter-spacing: -0.3px;
-            }
-            .vim-command { font-size: 4vw; }
+            .objc-code { font-size: 4vw; }
+            .header-comment { font-size: 3.5vw; }
+            .since-tag { font-size: 3vw; }
         }
     </style>
 </head>
 <body>
     <div class="content-wrapper">
-        <div class="comment">// since 2010</div>
+        <div class="since-tag">
+            Since Manual Reference Counting
+        </div>
+
+        <div class="header-comment">
+            // Türk Telekom, THY, TTNET, Muud, Avea<br>
+            // Developed by Tugrul Ozdemir
+        </div>
         
         <div class="objc-code">
-            <span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])
-        </div>
-        
-        <div class="vim-command">
-            :wq
-        </div>
+<span class="keyword">int</span> main(<span class="keyword">int</span> argc, 
+         <span class="keyword">const char</span> * argv[]) {
+    
+    [foundation <span class="method">retain</span>];
+
+}</div>
     </div>
 </body>
 </html>

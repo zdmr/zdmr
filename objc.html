@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tugrulozdemir.com - Legacy</title>
+    <title>tugrulozdemir.com @ Obj-C</title>
     <style>
         html { height: -webkit-fill-available; }
         body {
-            background-color: #1e1e1e;
+            background-color: #0d1117;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,21 +18,30 @@
             height: 100dvh;
             font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
             -webkit-font-smoothing: antialiased;
+            color: #ffffff;
+            overflow: hidden;
         }
         .content-wrapper {
             display: flex;
             flex-direction: column;
             gap: 12px;
             text-align: left;
+            width: fit-content;
+            max-width: 90vw;
+        }
+        .comment {
+            font-size: 0.9rem;
+            color: #7F8C98;
+            opacity: 0.8;
+            margin-bottom: -4px;
         }
         .objc-code {
             font-size: 1.6rem;
             letter-spacing: -0.5px;
             color: #ffffff;
+            white-space: nowrap;
         }
         .keyword { color: #D3429E; }
-        .class-name { color: #6fb3d2; }
-        .pointer { color: #ffffff; }
         .vim-command {
             font-size: 1.2rem;
             color: #7d8590;
@@ -55,17 +64,24 @@
             50% { background-color: #007aff; }
         }
         @media (max-width: 600px) {
-            .content-wrapper { padding: 0 30px; box-sizing: border-box; }
-            .objc-code { font-size: 1.1rem; }
-            .vim-command { font-size: 1rem; }
+            .content-wrapper { padding: 0 20px; box-sizing: border-box; }
+            .comment { font-size: 3.5vw; }
+            .objc-code {
+                font-size: 5.2vw;
+                letter-spacing: -0.3px;
+            }
+            .vim-command { font-size: 4vw; }
         }
     </style>
 </head>
 <body>
     <div class="content-wrapper">
+        <div class="comment">// since 2010</div>
+        
         <div class="objc-code">
-            <span class="class-name">NSObject</span> <span class="pointer">*</span>base = <span class="keyword">[[</span><span class="class-name">NSObject</span> <span class="keyword">alloc</span><span class="keyword">]</span> <span class="keyword">init</span><span class="keyword">]</span>;
+            <span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])
         </div>
+        
         <div class="vim-command">
             :wq
         </div>

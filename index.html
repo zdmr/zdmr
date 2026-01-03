@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tugrulozdemir.com</title>
     <style>
-        html { height: -webkit-fill-available; }
+        html { 
+            height: -webkit-fill-available; 
+            overflow-x: hidden; 
+        }
         body {
             background-color: #0d1117;
             margin: 0;
@@ -15,19 +18,28 @@
             justify-content: center;
             min-height: 100vh;
             min-height: -webkit-fill-available;
-            height: 100dvh;
             font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
             -webkit-font-smoothing: antialiased;
             color: #e6edf3;
-            position: relative;
+            overflow-x: hidden;
         }
+        
         .content-wrapper {
             display: flex;
             flex-direction: column;
             width: 100%;
             max-width: 450px;
-            padding: 0 30px;
+            height: 100vh; 
+            height: -webkit-fill-available;
+            padding: 40px 30px;
             box-sizing: border-box;
+            justify-content: space-between; 
+        }
+        
+        .code-section {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 100%;
         }
         
         .swift-code-block {
@@ -38,13 +50,11 @@
             color: #e6edf3;
             line-height: 1.4;
             background: transparent;
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
             word-wrap: break-word;
         }
         
-        code {
-            font-family: inherit;
-        }
+        code { font-family: inherit; }
 
         .keyword { color: #ff7b72; }
         .dot-case {
@@ -66,14 +76,14 @@
             justify-content: space-between;
             padding: 4px 10px;
             margin-bottom: 8px;
-            user-select: none; 
+            user-select: none;
         }
         
         .status-left { font-weight: bold; color: #f0883e; }
         .status-right { opacity: 0.7; }
 
         .vim-command {
-            display: block; 
+            display: block;
             font-size: 1.2rem;
             color: #7d8590;
             padding-left: 2px;
@@ -92,14 +102,18 @@
             animation: blink 1.2s step-end infinite;
         }
 
+        .archive-nav {
+            text-align: center;
+            padding-top: 20px;
+        }
+
         .archive-link {
-            position: absolute;
-            bottom: 30px;
             font-size: 0.75rem;
             color: #30363d;
             text-decoration: none;
             border-bottom: 1px dashed #30363d;
             transition: color 0.3s;
+            display: inline-block;
         }
         
         .archive-link:hover {
@@ -116,29 +130,32 @@
             .swift-code-block { font-size: 1.2rem; }
             .vim-command { font-size: 1rem; }
             .status-line { font-size: 0.7rem; }
-            .content-wrapper { padding: 0 20px; }
+            .content-wrapper { padding: 30px 20px; }
+            .archive-link { font-size: 0.65rem; }
         }
     </style>
 </head>
 <body>
 
     <main class="content-wrapper">
-        <pre class="swift-code-block"><code><span class="keyword">if let</span> dot <span class="keyword">=</span> <span class="dot-case">.</span> {
+        <div class="code-section">
+            <pre class="swift-code-block"><code><span class="keyword">if let</span> dot <span class="keyword">=</span> <span class="dot-case">.</span> {
 
 }</code></pre>
 
-        <div class="vim-container">
-            <div class="status-line" role="status">
-                <span class="status-left">main.swift [+]</span>
-                <span class="status-right">utf-8 | swift | 1:1</span>
+            <div class="vim-container">
+                <div class="status-line" role="status">
+                    <span class="status-left">main.swift [+]</span>
+                    <span class="status-right">utf-8 | swift | 1:1</span>
+                </div>
+                <samp class="vim-command">:wq</samp>
             </div>
-            <samp class="vim-command">:wq</samp>
         </div>
-    </main>
 
-    <nav>
-        <a href="objc.html" class="archive-link">ARCHIVE: legacy_v1.0.objc</a>
-    </nav>
+        <nav class="archive-nav">
+            <a href="objc.html" class="archive-link">ARCHIVE: legacy_v1.0.objc</a>
+        </nav>
+    </main>
 
 </body>
 </html>

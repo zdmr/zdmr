@@ -22,61 +22,97 @@
         .content-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
             text-align: left;
-            width: fit-content;
-            max-width: 90vw;
-            padding: 20px;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px 25px;
+            box-sizing: border-box;
         }
         .since-tag { 
             color: #7F8C98; 
-            font-size: 0.85rem; 
-            letter-spacing: 1.5px;
+            font-size: 0.8rem; 
+            letter-spacing: 1.2px;
             text-transform: uppercase;
         }
         .header-comment {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6A737D;
-            line-height: 1.6;
+            line-height: 1.5;
             border-left: 2px solid #30363d;
             padding-left: 15px;
+            margin-bottom: 5px;
         }
         .objc-code {
             font-size: 1.2rem;
             color: #ffffff;
-            line-height: 1.5;
-            /* Mobilde taşmayı yöneten kural */
+            line-height: 1.4;
             white-space: pre-wrap;
-            word-break: break-all;
+            word-break: break-word;
         }
         .keyword { color: #D3429E; }
         .method { color: #3ad900; }
-
+        .vim-container {
+            margin-top: 30px;
+            width: 100%;
+        }
+        .status-line {
+            background-color: #313131;
+            color: #d0d0d0;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 10px;
+            margin-bottom: 6px;
+            user-select: none;
+        }
+        .status-left { font-weight: normal; }
+        .status-right { opacity: 0.8; }
+        .vim-command {
+            display: block;
+            font-size: 1.1rem;
+            color: #e6edf3;
+            padding-left: 2px;
+        }
+        .vim-command::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #347CFE;
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1.2s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #347CFE; }
+        }
         @media (max-width: 600px) {
-            .objc-code { font-size: 4vw; }
-            .header-comment { font-size: 3.5vw; }
-            .since-tag { font-size: 3vw; }
+            .objc-code { font-size: 1rem; }
+            .header-comment { font-size: 0.75rem; }
+            .since-tag { font-size: 0.65rem; }
+            .content-wrapper { padding: 20px; gap: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="content-wrapper">
-        <div class="since-tag">
-            Since Manual Reference Counting
-        </div>
-
+        <div class="since-tag">Since Manual Reference Counting</div>
         <div class="header-comment">
             // Türk Telekom, THY, TTNET, Muud, Avea<br>
             // Developed by Tugrul Ozdemir
         </div>
-        
-        <div class="objc-code">
-<span class="keyword">int</span> main(<span class="keyword">int</span> argc, 
-         <span class="keyword">const char</span> * argv[]) {
-    
+        <div class="objc-code"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const char</span> *argv[]) {
     [foundation <span class="method">retain</span>];
-
 }</div>
+        <div class="vim-container">
+            <div class="status-line" role="status">
+                <span class="status-left">legacy_v1.0.objc [+]</span>
+                <span class="status-right">utf-8 | objc | 4,1</span>
+            </div>
+            <samp class="vim-command">:wq</samp>
+        </div>
     </div>
 </body>
 </html>

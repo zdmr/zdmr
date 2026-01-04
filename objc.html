@@ -70,7 +70,7 @@
         .status-right { opacity: 0.8; }
         .vim-command {
             display: block;
-            font-size: 1.1rem;
+            font-size: 1.0rem;
             color: #e6edf3;
             padding-left: 2px;
         }
@@ -79,14 +79,14 @@
             display: inline-block;
             width: 8px;
             height: 18px;
-            background-color: #347CFE;
+            background-color: #e6edf3;
             margin-left: 2px;
             vertical-align: middle;
-            animation: blink 1.2s step-end infinite;
+            animation: blink 1.5s step-end infinite;
         }
         @keyframes blink {
             from, to { background-color: transparent; }
-            50% { background-color: #347CFE; }
+            50% { background-color: #e6edf3; }
         }
         @media (max-width: 600px) {
             .objc-code { font-size: 1rem; }
@@ -108,7 +108,7 @@
 }</div>
         <div class="vim-container">
             <div class="status-line" role="status">
-                <span class="status-left">legacy_v1.0.objc [+]</span>
+                <span class="status-left">main.m [+]</span>
                 <span class="status-right">utf-8 | objc | 4,1</span>
             </div>
             <samp class="vim-command">:wq</samp>

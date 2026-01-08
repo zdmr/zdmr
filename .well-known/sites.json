@@ -1,0 +1,10 @@
+{
+  "interval_seconds": 120,
+  "sites": [
+      "tesla-api|https://api.remote.mobi",
+    "tesla-public-key|https://remote.mobi/.well-known/appspecific/com.tesla.3p.public-key.pem",
+    "-vault|http://127.0.0.1:8080",
+    "-notes|http://127.0.0.1:5230",
+    "-gitea|http://127.0.0.1:3000"
+  ]
+}

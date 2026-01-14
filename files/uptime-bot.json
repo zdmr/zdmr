@@ -1,5 +1,5 @@
 {
-  "interval_seconds": 90,
+  "interval_seconds": 150,
   "sites": [
     "tesla-api|https://api.apix.tr",
     "tesla-public-key|https://apix.tr/.well-known/appspecific/com.tesla.3p.public-key.pem",
